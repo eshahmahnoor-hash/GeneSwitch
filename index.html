@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeneSwitch - Mutation Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>GeneSwitch</h1>
+      <p class="subtitle">Analyze DNA mutations and their impact on amino acids</p>
+    </header>
+
+    <section class="input-section">
+      <textarea id="sequence" placeholder="Enter raw DNA sequence (e.g., ATGCGATCG...)"></textarea>
+      <input type="file" id="fastaUpload" accept=".fasta,.fa">
+      <input type="number" id="position" placeholder="Mutation position (1-based)">
+      <select id="newBase">
+        <option value="">Select Nucleotide</option>
+        <option value="A">A</option>
+        <option value="T">T</option>
+        <option value="C">C</option>
+        <option value="G">G</option>
+      </select>
+      <button id="analyzeBtn">Run Comprehensive Analysis</button>
+    </section>
+
+    <section class="result-section">
+      <h2>Analysis Report</h2>
+      <div id="result" class="report-grid"></div>
+    </section>
+
+    <section class="history-section">
+      <div class="history-header">
+        <h2>Recent Analyses</h2>
+        <button id="clearHistory">Clear History</button>
+      </div>
+      <table id="historyTable">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Position</th>
+            <th>Change</th>
+            <th>Type</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
